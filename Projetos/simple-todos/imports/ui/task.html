@@ -1,0 +1,28 @@
+<template name="task">
+  <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
+    <button class="delete">&times;</button>
+
+
+
+      <button checked="{{checked}}" class="finalizar">Finalizar tarefa</button>
+
+    {{#if isOwner}}
+      <button class="toggle-private">
+        {{#if private}}
+          Private
+        {{else}}
+          Public
+        {{/if}}
+      </button>
+    {{/if}}
+      <button class="clonar">Clonar Tarefa</button>
+    <span class="text"><br>
+        Autor da tarefa: <br><strong>{{username}}</strong><br><br>
+        Título da tarefa: <br><strong>{{titulo}}</strong><br><br>
+        Data de entrega: <br><strong>{{prevTermino}}</strong><br><br>
+        Evolvidos na tarefa: <br><strong>{{envolvidos}}</strong><br><br>
+        Descrição: <br><strong>{{descricao}}</strong><br><br><br>
+        Tarefa criada em: {{createdAt}}<br>
+    </span>
+  </li>
+</template>

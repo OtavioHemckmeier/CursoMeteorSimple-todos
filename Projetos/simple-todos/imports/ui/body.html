@@ -1,0 +1,33 @@
+<body>
+  <div class="container">
+    <header>
+      <h1>Todo List ({{incompleteCount}})</h1>
+
+      <label class="hide-completed">
+        <input type="checkbox" />
+        Hide Completed Tasks
+      </label>
+
+      {{> loginButtons}}
+
+      {{#if currentUser}}
+
+        <form class="new-task">
+            <div>
+              <input type="text" name="titulo" id="titulo" placeholder="Título da tarefa" />
+              <input type="text" name="prevTermino" id="prevTermino" placeholder="Pevisão de Término" />
+              <input type="text" name="envolvidos" placeholder="Enolvidos" />
+              <input type="text" name="descricao" placeholder="Descrição" />
+            <button type="submit">Criar Tarefa</button>
+        </div>
+        </form>
+      {{/if}}
+    </header>
+
+    <ul>
+      {{#each tasks}}
+        {{> task}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
